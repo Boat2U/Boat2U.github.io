@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-4.png%5C">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-5.png%5C">
 <meta property="article:published_time" content="2023-05-04T11:24:00.000Z">
-<meta property="article:modified_time" content="2023-05-04T15:42:03.730Z">
+<meta property="article:modified_time" content="2023-05-04T16:37:15.384Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary_large_image">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          562 words
+          779 words
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          5 mins
+          7 mins
         
       </span>
     
@@ -288,13 +288,20 @@
 <li>官方文档十分友好, 页面简洁, 清晰简单, 详见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">https://hexo.io/zh-cn/docs/index.html</a></li>
 <li>使用十分灵活简便, 支持强大的主题和插件系统</li>
 </ul>
-<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><p>这次采用的主题是Fluid<br>Fluid是基于Hexo的一款Material Design风格的主题，</p>
+<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><p>这次采用的主题是Fluid</p>
+<p>Fluid是基于Hexo的一款Material Design风格的主题，它有着优雅的颜值，使用Material Design风格突出层次感，但又不失简约，让用户能专注于写作；同时提供大量定制化配置项，使每个用户使用该主题都能具有独特的样式，能够适配手机、平板等设备，包括极端的分辨率都能轻松应对；并且主题中少有的整合了 LaTeX 和 mermaid 的支持。</p>
 <h2 id="三、功能实现"><a href="#三、功能实现" class="headerlink" title="三、功能实现"></a>三、功能实现</h2><h3 id="使用Hexo-Admin插件"><a href="#使用Hexo-Admin插件" class="headerlink" title="使用Hexo Admin插件"></a>使用Hexo Admin插件</h3><p>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）,使用方便, 非常适合新手</p>
 <blockquote>
 <p>安装命令: npm install –save hexo-admin<br>启动服务后访问地址: <a target="_blank" rel="noopener" href="http://localhost:4000/admin">http://localhost:4000/admin</a></p>
 </blockquote>
 <p><img src="/%5Cimages%5Cpasted-1.png%5C" srcset="/img/loading.gif" lazyload alt="插件使用界面"></p>
-<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><h3 id="1-hexo-new新建文件失败"><a href="#1-hexo-new新建文件失败" class="headerlink" title="1. hexo new新建文件失败"></a>1. hexo new新建文件失败</h3><p><img src="/%5Cimages%5Cpasted-2.png%5C" srcset="/img/loading.gif" lazyload alt="问题描述"><br>修改_config.yml<br><img src="/%5Cimages%5Cpasted-3.png%5C" srcset="/img/loading.gif" lazyload alt="解决办法"><br><img src="/%5Cimages%5Cpasted-4.png%5C" srcset="/img/loading.gif" lazyload alt="正确显示"></p>
+<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><p>由于Fluid本身主题足够简约大方，导览也很方便，所以并没有做太多的修改</p>
+<p>需要注意的一个点是在md文件可以通过插入</p>
+<ul>
+<li><!-- more -->
+来手动截断首页预览的内容，让首页更加干净简约</li>
+</ul>
+<h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><h3 id="1-hexo-new新建文件失败"><a href="#1-hexo-new新建文件失败" class="headerlink" title="1. hexo new新建文件失败"></a>1. hexo new新建文件失败</h3><p><img src="/%5Cimages%5Cpasted-2.png%5C" srcset="/img/loading.gif" lazyload alt="问题描述"><br>修改_config.yml<br><img src="/%5Cimages%5Cpasted-3.png%5C" srcset="/img/loading.gif" lazyload alt="解决办法"><br><img src="/%5Cimages%5Cpasted-4.png%5C" srcset="/img/loading.gif" lazyload alt="正确显示"></p>
 <h3 id="2-上传文件到github时上传到了master-而不是默认分支main"><a href="#2-上传文件到github时上传到了master-而不是默认分支main" class="headerlink" title="2. 上传文件到github时上传到了master, 而不是默认分支main"></a>2. 上传文件到github时上传到了master, 而不是默认分支main</h3><p>修改_config.yml，设置的是部署到main分支（我的默认分支），所以将branch设置为main<br><img src="/%5Cimages%5Cpasted-5.png%5C" srcset="/img/loading.gif" lazyload alt="修改branch为main，注意加冒号"></p>
 
                 
