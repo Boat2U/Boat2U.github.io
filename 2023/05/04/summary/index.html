@@ -24,12 +24,16 @@
 <meta property="og:description" content="总结和反思">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-1.png%5C">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-10.png%5C">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-2.png%5C">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-3.png%5C">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-4.png%5C">
 <meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-5.png%5C">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-11.png%5C">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-12.png%5C">
+<meta property="og:image" content="http://example.com/%5Cimages%5Cpasted-13.png%5C">
 <meta property="article:published_time" content="2023-05-04T11:24:00.000Z">
-<meta property="article:modified_time" content="2023-05-04T16:43:18.904Z">
+<meta property="article:modified_time" content="2023-05-05T02:35:30.511Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary_large_image">
@@ -226,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.3k words
         
       </span>
     
@@ -237,7 +241,7 @@
         
         
         
-          10 mins
+          12 mins
         
       </span>
     
@@ -295,6 +299,10 @@
 <p>安装命令: npm install –save hexo-admin<br>启动服务后访问地址: <a target="_blank" rel="noopener" href="http://localhost:4000/admin">http://localhost:4000/admin</a></p>
 </blockquote>
 <p><img src="/%5Cimages%5Cpasted-1.png%5C" srcset="/img/loading.gif" lazyload alt="插件使用界面"></p>
+<h3 id="使用Gitalk实现评论功能"><a href="#使用Gitalk实现评论功能" class="headerlink" title="使用Gitalk实现评论功能"></a>使用Gitalk实现评论功能</h3><p>安装命令</p>
+<blockquote>
+<p>npm install hexo-plugin-gitalk –save<br><img src="/%5Cimages%5Cpasted-10.png%5C" srcset="/img/loading.gif" lazyload alt="评论成功"></p>
+</blockquote>
 <h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><p>由于Fluid本身主题足够简约大方，导览也很方便，所以并没有做太多的修改</p>
 <p>需要注意的一个点是在md文件可以通过插入</p>
 <ul>
@@ -303,6 +311,9 @@
 </ul>
 <h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><h3 id="1-hexo-new新建文件失败"><a href="#1-hexo-new新建文件失败" class="headerlink" title="1. hexo new新建文件失败"></a>1. hexo new新建文件失败</h3><p><img src="/%5Cimages%5Cpasted-2.png%5C" srcset="/img/loading.gif" lazyload alt="问题描述"><br>修改_config.yml<br><img src="/%5Cimages%5Cpasted-3.png%5C" srcset="/img/loading.gif" lazyload alt="解决办法"><br><img src="/%5Cimages%5Cpasted-4.png%5C" srcset="/img/loading.gif" lazyload alt="正确显示"></p>
 <h3 id="2-上传文件到github时上传到了master-而不是默认分支main"><a href="#2-上传文件到github时上传到了master-而不是默认分支main" class="headerlink" title="2. 上传文件到github时上传到了master, 而不是默认分支main"></a>2. 上传文件到github时上传到了master, 而不是默认分支main</h3><p>修改_config.yml，设置的是部署到main分支（我的默认分支），所以将branch设置为main<br><img src="/%5Cimages%5Cpasted-5.png%5C" srcset="/img/loading.gif" lazyload alt="修改branch为main，注意加冒号"></p>
+<h3 id="3-出现评论界面但无法评论"><a href="#3-出现评论界面但无法评论" class="headerlink" title="3 出现评论界面但无法评论"></a>3 出现评论界面但无法评论</h3><p>问题描述如下：<br><img src="/%5Cimages%5Cpasted-11.png%5C" srcset="/img/loading.gif" lazyload alt="无法评论"></p>
+<p>解决办法：<br>需要建一个仓库专门储存评论（我建的仓库名为blog_comment）,该仓库需要初始化创建一个issue，并且新增一个label名为“Gitalk”<br><img src="/%5Cimages%5Cpasted-12.png%5C" srcset="/img/loading.gif" lazyload alt="创建完Gitalk标签后，所有的评论都会在该标签下"><br>并且settings - Developer Settings - OAuth Apps下要填入正确的域名<br><img src="/%5Cimages%5Cpasted-13.png%5C" srcset="/img/loading.gif" lazyload alt="正确复制域名"></p>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>简单学习了Github + Hexo的使用，搭建了一个简陋的个人静态博客</p>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
