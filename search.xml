@@ -35,8 +35,32 @@
   </entry>
   <entry>
     <title>总结和反思</title>
-    <url>/2023/05/04/summer_camp/</url>
-    <content><![CDATA[<h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1>
+    <url>/2023/05/04/summary/</url>
+    <content><![CDATA[<h1 id="总结和反思"><a href="#总结和反思" class="headerlink" title="总结和反思"></a>总结和反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>这次使用Github + Hexo搭建了一个简单的个人静态博客, 之所以选择Hexo是有以下几个原因：</p>
+<ul>
+<li>环境的配置相对来说十分简单，只需要安装Git和Nodejs即可 <del>恰好这两个都有现成的</del></li>
+<li>官方文档十分友好, 页面简洁, 清晰简单, 详见<a href="https://hexo.io/zh-cn/docs/index.html">https://hexo.io/zh-cn/docs/index.html</a></li>
+<li>使用十分灵活简便, 支持强大的主题和插件系统</li>
+</ul>
+<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><p>这次采用的主题是Fluid</p>
+<p>Fluid是基于Hexo的一款Material Design风格的主题，它有着优雅的颜值，使用Material Design风格突出层次感，但又不失简约，让用户能专注于写作；同时提供大量定制化配置项，使每个用户使用该主题都能具有独特的样式，能够适配手机、平板等设备，包括极端的分辨率都能轻松应对；并且主题中少有的整合了 LaTeX 和 mermaid 的支持。</p>
+<h2 id="三、功能实现及技术选择"><a href="#三、功能实现及技术选择" class="headerlink" title="三、功能实现及技术选择"></a>三、功能实现及技术选择</h2><h3 id="使用Hexo-Admin插件"><a href="#使用Hexo-Admin插件" class="headerlink" title="使用Hexo Admin插件"></a>使用Hexo Admin插件</h3><p>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）,使用方便, 非常适合新手</p>
+<blockquote>
+<p>安装命令: npm install –save hexo-admin<br>启动服务后访问地址: <a href="http://localhost:4000/admin">http://localhost:4000/admin</a></p>
+</blockquote>
+<p><img src="/images/admin.jpg" alt="插件使用界面"></p>
+<h3 id="使用Gitalk实现评论功能"><a href="#使用Gitalk实现评论功能" class="headerlink" title="使用Gitalk实现评论功能"></a>使用Gitalk实现评论功能</h3><p>安装命令</p>
+<blockquote>
+<p>npm install hexo-plugin-gitalk –save<br><img src="/images/comment.jpg" alt="评论成功"></p>
+</blockquote>
+<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><p>由于Fluid本身主题足够简约大方，导览也很方便，所以并没有做太多的修改</p>
+<p>需要注意的一个点是在md文件中可以通过以下方式来手动截断让首页更加干净简约<br><img src="/images/cut.png" alt="手动截断"><br><img src="/images/cutshow.png" alt="成功截断"></p>
+<h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><h3 id="1-hexo-new新建文件失败"><a href="#1-hexo-new新建文件失败" class="headerlink" title="1. hexo new新建文件失败"></a>1. hexo new新建文件失败</h3><p><img src="/images/question1.jpg" alt="问题描述"><br>修改_config.yml<br><img src="/images/solution1.jpg" alt="解决办法"><br><img src="/images/acc1.jpg" alt="正确显示"></p>
+<h3 id="2-上传文件到github时上传到了master-而不是默认分支main"><a href="#2-上传文件到github时上传到了master-而不是默认分支main" class="headerlink" title="2. 上传文件到github时上传到了master, 而不是默认分支main"></a>2. 上传文件到github时上传到了master, 而不是默认分支main</h3><p>修改_config.yml，设置的是部署到main分支（我的默认分支），所以将branch设置为main<br><img src="/images/solution2.jpg" alt="修改branch为main，注意加冒号"></p>
+<h3 id="3-出现评论界面但无法评论"><a href="#3-出现评论界面但无法评论" class="headerlink" title="3 出现评论界面但无法评论"></a>3 出现评论界面但无法评论</h3><p>问题描述如下：<br><img src="/images/pasted-11.png" alt="无法评论"></p>
+<p>解决办法：<br>需要建一个仓库专门储存评论（可以直接在Boat2U.github.io中的issues存储评论）,该仓库需要初始化创建一个issue，并且新增一个label名为“Gitalk”<br><img src="/images/pasted-14.png" alt="创建完Gitalk标签后，所有的评论都会在该标签下"><br>并且settings - Developer Settings - OAuth Apps下要填入正确的域名<br><img src="/images/pasted-13.png" alt="正确复制域名"></p>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>简单学习了Github + Hexo的使用，搭建了一个简陋的个人静态博客</p>
+
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
@@ -82,32 +106,8 @@
   </entry>
   <entry>
     <title>总结和反思</title>
-    <url>/2023/05/04/summary/</url>
-    <content><![CDATA[<h1 id="总结和反思"><a href="#总结和反思" class="headerlink" title="总结和反思"></a>总结和反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>这次使用Github + Hexo搭建了一个简单的个人静态博客, 之所以选择Hexo是有以下几个原因：</p>
-<ul>
-<li>环境的配置相对来说十分简单，只需要安装Git和Nodejs即可 <del>恰好这两个都有现成的</del></li>
-<li>官方文档十分友好, 页面简洁, 清晰简单, 详见<a href="https://hexo.io/zh-cn/docs/index.html">https://hexo.io/zh-cn/docs/index.html</a></li>
-<li>使用十分灵活简便, 支持强大的主题和插件系统</li>
-</ul>
-<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><p>这次采用的主题是Fluid</p>
-<p>Fluid是基于Hexo的一款Material Design风格的主题，它有着优雅的颜值，使用Material Design风格突出层次感，但又不失简约，让用户能专注于写作；同时提供大量定制化配置项，使每个用户使用该主题都能具有独特的样式，能够适配手机、平板等设备，包括极端的分辨率都能轻松应对；并且主题中少有的整合了 LaTeX 和 mermaid 的支持。</p>
-<h2 id="三、功能实现及技术选择"><a href="#三、功能实现及技术选择" class="headerlink" title="三、功能实现及技术选择"></a>三、功能实现及技术选择</h2><h3 id="使用Hexo-Admin插件"><a href="#使用Hexo-Admin插件" class="headerlink" title="使用Hexo Admin插件"></a>使用Hexo Admin插件</h3><p>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）,使用方便, 非常适合新手</p>
-<blockquote>
-<p>安装命令: npm install –save hexo-admin<br>启动服务后访问地址: <a href="http://localhost:4000/admin">http://localhost:4000/admin</a></p>
-</blockquote>
-<p><img src="/images/admin.jpg" alt="插件使用界面"></p>
-<h3 id="使用Gitalk实现评论功能"><a href="#使用Gitalk实现评论功能" class="headerlink" title="使用Gitalk实现评论功能"></a>使用Gitalk实现评论功能</h3><p>安装命令</p>
-<blockquote>
-<p>npm install hexo-plugin-gitalk –save<br><img src="/images/comment.jpg" alt="评论成功"></p>
-</blockquote>
-<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><p>由于Fluid本身主题足够简约大方，导览也很方便，所以并没有做太多的修改</p>
-<p>需要注意的一个点是在md文件中可以通过以下方式来手动截断让首页更加干净简约<br><img src="/images/cut.png" alt="手动截断"><br><img src="/images/cutshow.png" alt="成功截断"></p>
-<h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><h3 id="1-hexo-new新建文件失败"><a href="#1-hexo-new新建文件失败" class="headerlink" title="1. hexo new新建文件失败"></a>1. hexo new新建文件失败</h3><p><img src="/images/question1.jpg" alt="问题描述"><br>修改_config.yml<br><img src="/images/solution1.jpg" alt="解决办法"><br><img src="/images/acc1.jpg" alt="正确显示"></p>
-<h3 id="2-上传文件到github时上传到了master-而不是默认分支main"><a href="#2-上传文件到github时上传到了master-而不是默认分支main" class="headerlink" title="2. 上传文件到github时上传到了master, 而不是默认分支main"></a>2. 上传文件到github时上传到了master, 而不是默认分支main</h3><p>修改_config.yml，设置的是部署到main分支（我的默认分支），所以将branch设置为main<br><img src="/images/solution2.jpg" alt="修改branch为main，注意加冒号"></p>
-<h3 id="3-出现评论界面但无法评论"><a href="#3-出现评论界面但无法评论" class="headerlink" title="3 出现评论界面但无法评论"></a>3 出现评论界面但无法评论</h3><p>问题描述如下：<br><img src="/images/pasted-11.png" alt="无法评论"></p>
-<p>解决办法：<br>需要建一个仓库专门储存评论（可以直接在Boat2U.github.io中的issues存储评论）,该仓库需要初始化创建一个issue，并且新增一个label名为“Gitalk”<br><img src="/images/pasted-14.png" alt="创建完Gitalk标签后，所有的评论都会在该标签下"><br>并且settings - Developer Settings - OAuth Apps下要填入正确的域名<br><img src="/images/pasted-13.png" alt="正确复制域名"></p>
-<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>简单学习了Github + Hexo的使用，搭建了一个简陋的个人静态博客</p>
-
+    <url>/2023/05/04/summer_camp/</url>
+    <content><![CDATA[<h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><h2 id="三、功能实现及技术选择"><a href="#三、功能实现及技术选择" class="headerlink" title="三、功能实现及技术选择"></a>三、功能实现及技术选择</h2><h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2>
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
