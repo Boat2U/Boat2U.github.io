@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: film, Boat2U&#39;s Blog">
+    <meta name="keywords" content="contact, Boat2U&#39;s Blog">
     <meta name="description" content="Boat2U&#39;s Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类: film | Boat2U&#39;s Blog</title>
+    <title>contact | Boat2U&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -286,7 +286,13 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/barrager.css">
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.barrager.js"></script>
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -334,103 +340,89 @@
     </div>
 </div>
 
+<style>
+    #send{
+        margin-bottom: 10px;
+        width: 49%;
+        background-color: #0ba360;
+    }
+    #clear{
+        margin-bottom: 10px;
+        width: 49%;
+        background-color: #e7c65c;
+    }
+    p{
+        text-align: center;
+    }
+</style>
 <main class="content">
+    <div id="contact" class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+                </div>
+                
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-    
-
-<div id="category-cloud" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"ea0363f556867f33c0b1","clientSecret":"b1beaa1d6a57ced3ce4f013db5d9f1c71f6aabd3","repo":"Boat2U.github.io","owner":"Boat2U","admin":["Boat2U"],"distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
             </div>
-            <div class="tag-chips">
-                
-                
-                
-                <a href="/categories/film/" title="film: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">film
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/summary/" title="summary: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">summary
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-            </div>
+            <!--valine评论弹幕-->
+            
         </div>
+
+        <!--其他评论card-->
+        <div class="card">
+            
+                <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
     </div>
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: 'b1beaa1d6a57ced3ce4f013db5d9f1c71f6aabd3',
+        repo: 'Boat2U.github.io',
+        owner: 'Boat2U',
+        admin: ["Boat2U"],
+        id: '2023-07-14T12-42-56',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    
+    gitalk.render('gitalk-container');
+</script>
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/05/04/amelia/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/images/pasted-6.jpg" class="responsive-img" alt="《天使爱美丽》">
-                            
-                            <span class="card-title">《天使爱美丽》</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一部关于爱与孤独的电影
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/film/" class="post-category">
-                                    film
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/film/">
-                            <span class="chip bg-color">film</span>
-                        </a>
-                        
-                        <a href="/tags/music/">
-                            <span class="chip bg-color">music</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
+
+            
+
+            
+
+            
+
+            
+
+            
+
         </div>
-    </article>
+    </div>
 </main>
-
-
 
 
     <footer class="page-footer bg-color">
