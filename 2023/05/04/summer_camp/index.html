@@ -359,14 +359,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    505
+                    914
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -386,7 +386,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>之前的一次实验作业中已经利用 Github + Hexo搭建了一个简单的个人静态博客，当时选取的主题是 Fluid，因为感觉Hexo上手很方便，所以这次项目只想换个主题改进一下，最终选定了主题 matery，主要是考虑到以下几点：</p>
+                <h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>之前已经利用 Github + Hexo搭建了一个简单的个人静态博客，当时选取的主题是 Fluid，因为感觉Hexo上手很方便，所以这次项目只想换个主题改进一下，最终选定了主题 matery，主要是考虑到以下几点：</p>
 <ol>
 <li>简单漂亮，butterfly 设计</li>
 <li>响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现</li>
@@ -416,24 +416,64 @@
 <h2 id="三、功能实现"><a href="#三、功能实现" class="headerlink" title="三、功能实现"></a>三、功能实现</h2><p><strong>评论功能</strong></p>
 <p>这次项目依然沿用了之前的 Gitalk 插件实现评论</p>
 <p>安装命令：</p>
-<blockquote>
-<p>npm install hexo-plugin-gitalk –save</p>
-</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-plugin-gitalk –save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/matery/comment.png" alt="评论"></p>
 <p><strong>搜索功能</strong></p>
 <p>需要安装hexo-generator-search插件，支持对文章标题和文章内容的搜索</p>
-<blockquote>
-<p>npm install hexo-generator-search –save</p>
-</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/matery/search.png" alt="搜索"></p>
 <p><strong>文章字数统计</strong></p>
-<p>需要安装 hexo-wordcount 插件<br><code>npm i --save hexo-wordcount</code></p>
-<p>在Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">search:
-  path: search.xml
-  field: post
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2>
+<p>需要安装 hexo-wordcount 插件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i --save hexo-wordcount
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/images/matery/wordcount.png" alt="阅读统计"></p>
+<p><strong>代码块高亮</strong></p>
+<p>安装 hexo-prism-plugin 插件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><p>设置 matery 根目录下的 _config.yml 文件的 postInfo，展示文章更详细的信息</p>
+<pre class="line-numbers language-bash"><code class="language-bash">postInfo:
+  date: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 发布日期</span>
+  update: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 更新日期</span>
+  wordCount: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 文章字数统计</span>
+  totalCount: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 站点总文章字数</span>
+  min2read: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 文章阅读时长</span>
+  readCount: <span class="token boolean">true</span> <span class="token comment" spellcheck="true"># 文章阅读次数</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/matery/wordcount_1.png" alt="文章信息"></p>
+<p>重要文章开启置顶功能，在博客的md文件前面设置 <code>top: true</code>，首页可以看到推荐文章</p>
+<p><img src="/images/matery/index_1.png" alt="置顶文章"></p>
+<p>同时设置 <code>summary: 摘要内容</code> 在首页只显示内容摘要</p>
+<p><img src="/images/matery/summary.png" alt="显示内容摘要"></p>
+<h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2><p>因为这次项目是在之前的博客上进行改进，有些坑已经踩过了，所以没有遇到太多的问题，关于之前实验遇到的问题可以参考<a target="_blank" rel="noopener" href="https://boat2u.github.io/2023/05/04/summary/">博客</a></p>
+<p>需要注意的是，之前虽然设置过评论功能，由于更换了一个主题，gitalk 相关设置也需要在 matery 根目录的 _config.yml 中配置好：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">gitalk:
+  enable: <span class="token boolean">true</span>
+  owner: Boat2U
+  repo: Boat2U.github.io
+  oauth:
+    clientID: ea0363f556867f33c0b1
+    clientSecret: b1beaa1d6a57ced3ce4f013db5d9f1c71f6aabd3
+  admin: 
+    - Boat2U
+  distractionFreeMode: <span class="token boolean">true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这次实验主要遇到的问题只有<strong>代码高亮显示</strong>：</p>
+<p>hexo 的默认代码高亮显示阅读观感很差，因此我安装了 hexo-prism-plugin 插件，但是安装设置完后并未奏效，主要原因是 hexo 根目录下的 _config.yml 中 highlight 部分要设置 <code>enable: false  # 关闭原有的代码高亮</code>，同时新增的代码高亮插件中要设置 <code>enable: true</code>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 添加prism_plugin配置项</span>
+prism_plugin:
+  enable: <span class="token boolean">true</span>
+  preprocess: <span class="token boolean">true</span>
+  mode: <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>
+  theme: <span class="token string">'tomorrow'</span>
+  line_number: <span class="token boolean">true</span>    <span class="token comment" spellcheck="true"># default false</span>
+  custom_css: 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/matery/highlight.png" alt="代码高亮默认设置"></p>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>本次用 Hexo+github pages 搭建了一个简易个人博客，在原来的实验作业中做出了进一步的更改，更加熟悉了相关操作，是很有意义的一次经历。</p>
+
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
@@ -617,6 +657,58 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2023/05/04/amelia/">
+                    <div class="card-image">
+                        
+                        <img src="/images/pasted-6.jpg" class="responsive-img" alt="《天使爱美丽》">
+                        
+                        <span class="card-title">《天使爱美丽》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一部关于爱与孤独的电影
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/film/" class="post-category">
+                                    film
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/film/">
+                        <span class="chip bg-color">film</span>
+                    </a>
+                    
+                    <a href="/tags/music/">
+                        <span class="chip bg-color">music</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2023/05/04/summary/">
                     <div class="card-image">
                         
@@ -632,9 +724,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -654,43 +746,6 @@
                         <span class="chip bg-color">summary</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/04/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Boat2U
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
@@ -882,7 +937,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.1k</span>
+                        class="white-color">2.5k</span>
             
             
             
