@@ -52,7 +52,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -358,7 +358,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    214
+                    505
                 </div>
                 
 
@@ -385,13 +385,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>之前的一次实验作业中已经利用 Github + Hexo搭建了一个简单的个人静态博客，当时选取的主题是 Fluid，这次项目想要换个主题改进一下，最终选定了主题 matery，主要是考虑到以下几点：</p>
+                <h1 id="暑期夏令营实践项目的总结与反思"><a href="#暑期夏令营实践项目的总结与反思" class="headerlink" title="暑期夏令营实践项目的总结与反思"></a>暑期夏令营实践项目的总结与反思</h1><h2 id="一、关于博客的主题"><a href="#一、关于博客的主题" class="headerlink" title="一、关于博客的主题"></a>一、关于博客的主题</h2><p>之前的一次实验作业中已经利用 Github + Hexo搭建了一个简单的个人静态博客，当时选取的主题是 Fluid，因为感觉Hexo上手很方便，所以这次项目只想换个主题改进一下，最终选定了主题 matery，主要是考虑到以下几点：</p>
 <ol>
 <li>简单漂亮，butterfly 设计</li>
 <li>响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现</li>
 <li>首页轮播文章及每天动态切换 Banner 图片，瀑布流式的博客文章列表</li>
+<li>时间轴式的归档页，丰富的关于我页面（包括关于我、文章统计图、我的项目、我的技能、相册等）</li>
+<li>支持文章置顶、文章打赏、Gitalk 评论模块和首页的音乐播放和视频播放功能</li>
 </ol>
-<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><h2 id="三、功能实现及技术选择"><a href="#三、功能实现及技术选择" class="headerlink" title="三、功能实现及技术选择"></a>三、功能实现及技术选择</h2><h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2>
+<h2 id="二、页面设计"><a href="#二、页面设计" class="headerlink" title="二、页面设计"></a>二、页面设计</h2><p>该博客包含五个页面，分别是“首页”、“标签”、“分类”、“归档”和“关于”，</p>
+<p><strong>导航栏</strong></p>
+<p>支持搜索功能和切换夜间模式</p>
+<p><img src="/images/matery/navigation.png" alt="导航栏"></p>
+<p><strong>首页</strong></p>
+<p>支持音乐播放功能<br><img src="/images/matery/index.png" alt="首页"></p>
+<p>下滑可以看到推荐文章和瀑布流式的博客文章列表</p>
+<p><img src="/images/matery/index_1.png" alt="推荐文章"></p>
+<p><img src="/images/matery/index_2.png" alt="博客文章列表"></p>
+<p><strong>标签页</strong></p>
+<p>标签页采用了maetry主题的默认设置，采用了词云的设计</p>
+<p><img src="/images/matery/tags.png" alt="标签页"></p>
+<p><strong>分类页</strong></p>
+<p><img src="/images/matery/categories.png" alt="分类页"></p>
+<p><strong>归档页</strong></p>
+<p><img src="/images/matery/archieves.png" alt="归档页"></p>
+<p><strong>关于页</strong></p>
+<p><img src="/images/matery/about.png" alt="关于我"></p>
+<p><img src="/images/matery/about_1.png" alt="我的项目和我的相册"></p>
+<h2 id="三、功能实现"><a href="#三、功能实现" class="headerlink" title="三、功能实现"></a>三、功能实现</h2><p><strong>评论功能</strong></p>
+<p>这次项目依然沿用了之前的 Gitalk 插件实现评论</p>
+<p>安装命令：</p>
+<blockquote>
+<p>npm install hexo-plugin-gitalk –save</p>
+</blockquote>
+<p><img src="/images/matery/comment.png" alt="评论"></p>
+<p><strong>搜索功能</strong></p>
+<p>需要安装hexo-generator-search插件，支持对文章标题和文章内容的搜索</p>
+<blockquote>
+<p>npm install hexo-generator-search –save</p>
+</blockquote>
+<p><img src="/images/matery/search.png" alt="搜索"></p>
+<p><strong>文章字数统计</strong></p>
+<p>需要安装 hexo-wordcount 插件<br><code>npm i --save hexo-wordcount</code></p>
+<p>在Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、样式设计"><a href="#四、样式设计" class="headerlink" title="四、样式设计"></a>四、样式设计</h2><h2 id="五、问题及解决方法"><a href="#五、问题及解决方法" class="headerlink" title="五、问题及解决方法"></a>五、问题及解决方法</h2>
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
@@ -840,7 +879,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.8k</span>
+                        class="white-color">2.1k</span>
             
             
             
